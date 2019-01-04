@@ -7,6 +7,14 @@ public class Main {
      * Creates all the vehicles that will be part of this race.
      */
     private static void createVehicles(Race race) {
+        for (int i = 1; i <= 10; i++) {
+            Car car = new Car();
+            race.addVehicle(car);
+            Motorcycle motorcycle = new Motorcycle(i);
+            race.addVehicle(motorcycle);
+            Truck truck = new Truck();
+            race.addVehicle(truck);
+        }
     }
 
     /**
@@ -21,7 +29,7 @@ public class Main {
         Race race = new Race();
         createVehicles(race);
 
-        race.simulateRace();
+        race.simulateRace(race);
         race.printRaceResults();
     }
 }
